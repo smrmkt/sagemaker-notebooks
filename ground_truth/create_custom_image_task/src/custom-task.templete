@@ -1,0 +1,16 @@
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+<crowd-form>
+  <crowd-bounding-box
+    name="annotatedResult"
+    labels="['eye', 'nose']"
+    src="{{ task.input.sourceRef | grant_read_access }}"
+    header="Draw a box around eye and nose of the animal"
+  >
+    <full-instructions header="Bounding Box Instructions" >
+      <p>Draw a bounding box around dog/cats eyes and nose in each image. </p>
+    </full-instructions>
+    <short-instructions>
+      <p>Draw a bounding box around dog/cats eyes and nose in each image. </p>
+    </short-instructions>
+  </crowd-bounding-box>
+</crowd-form>
