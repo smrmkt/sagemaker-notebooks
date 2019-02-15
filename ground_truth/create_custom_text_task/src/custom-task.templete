@@ -1,0 +1,21 @@
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<crowd-form>
+    <crowd-classifier
+      name="sentiment"
+      categories="['5 - ポジティブ', '4', '3', '2', '1 - ネガティブ']"
+      header="次のトピックについて，提示された文章のポジネガを判定してください: {{ task.input.topic }}"
+    >
+      <classification-target>
+        {{ task.input.conversation }}
+      </classification-target>
+      
+      <full-instructions header="Conversation Relevance Instructions">
+        <h2>提示された文章のポジネガを判定してください</h2>
+      </full-instructions>
+
+      <short-instructions>
+        提示された文章のポジネガを判定してください
+      </short-instructions>
+    </crowd-classifier>
+</crowd-form>
