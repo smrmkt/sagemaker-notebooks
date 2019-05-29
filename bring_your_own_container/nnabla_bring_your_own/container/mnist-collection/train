@@ -1,0 +1,3 @@
+#!/bin/bash
+
+python classification.py -i 100 -o /opt/ml/model
