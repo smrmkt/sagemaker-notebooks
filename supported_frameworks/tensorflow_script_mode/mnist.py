@@ -138,7 +138,6 @@ def _parse_args():
     parser.add_argument('--train', type=str, default=os.environ.get('SM_CHANNEL_TRAINING'))
     parser.add_argument('--hosts', type=list, default=json.loads(os.environ.get('SM_HOSTS')))
     parser.add_argument('--current-host', type=str, default=os.environ.get('SM_CURRENT_HOST'))
-    parser.add_argument('--n-steps', type=int, default=100)
 
     return parser.parse_known_args()
 
@@ -177,7 +176,7 @@ if __name__ == "__main__":
         num_epochs=1,
         shuffle=False)
 
-    train_spec = tf.estimator.TrainSpec(train_input_fn, max_steps=args.n_steps)
+    train_spec = tf.estimator.TrainSpec(train_input_fn, max_steps=10)
     eval_spec = tf.estimator.EvalSpec(eval_input_fn)
     tf.estimator.train_and_evaluate(mnist_classifier, train_spec, eval_spec)
 
